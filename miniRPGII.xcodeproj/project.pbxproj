@@ -14,6 +14,7 @@
 		D342E7741D6BAB640004D01D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D342E7721D6BAB640004D01D /* LaunchScreen.storyboard */; };
 		D342E77F1D6BAB640004D01D /* miniRPGIITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D342E77E1D6BAB640004D01D /* miniRPGIITests.swift */; };
 		D342E78A1D6BAB640004D01D /* miniRPGIIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D342E7891D6BAB640004D01D /* miniRPGIIUITests.swift */; };
+		D342E7981D6BBF3E0004D01D /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = D342E7971D6BBF3E0004D01D /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		D342E7851D6BAB640004D01D /* miniRPGIIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = miniRPGIIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D342E7891D6BAB640004D01D /* miniRPGIIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = miniRPGIIUITests.swift; sourceTree = "<group>"; };
 		D342E78B1D6BAB640004D01D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D342E7971D6BBF3E0004D01D /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				D342E76B1D6BAB640004D01D /* ViewController.swift */,
 				D342E76D1D6BAB640004D01D /* Main.storyboard */,
 				D342E7701D6BAB640004D01D /* Assets.xcassets */,
+				D342E7971D6BBF3E0004D01D /* Player.swift */,
 				D342E7721D6BAB640004D01D /* LaunchScreen.storyboard */,
 				D342E7751D6BAB640004D01D /* Info.plist */,
 			);
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D342E76C1D6BAB640004D01D /* ViewController.swift in Sources */,
+				D342E7981D6BBF3E0004D01D /* Player.swift in Sources */,
 				D342E76A1D6BAB640004D01D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
