@@ -32,30 +32,29 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onPlayer1Attack(sender: AnyObject) {
-        if secondPlayer.isAlive {
-            disableAttack()
-            secondPlayer.attemptAttack(firstPlayer.attackPwr)
-            printLbl.text = "Player 1 Attacked Player 2!"
-            player2HP.text = "\(secondPlayer.HP)"
-            NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(ViewController.enableAttack), userInfo: nil, repeats: false)
-        } else {
+        disableAttack()
+        secondPlayer.attemptAttack(firstPlayer.attackPwr)
+        printLbl.text = "Player 1 Attacked Player 2!"
+        player2HP.text = "\(secondPlayer.HP)"
+        NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(ViewController.enableAttack), userInfo: nil, repeats: false)
+        if !secondPlayer.isAlive {
             player2.hidden = true
             player2Attack.hidden = true
             player2AttackLbl.hidden = true
             player2HP.hidden = true
             printLbl.text = "Player 1 Wins!"
+            NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(ViewController.showResetBtn), userInfo: nil, repeats: false)
         }
         
     }
     
     @IBAction func onPlayer2Attack(sender: AnyObject) {
-        if firstPlayer.isAlive {
-            disableAttack()
-            firstPlayer.attemptAttack(secondPlayer.attackPwr)
-            printLbl.text = "Player 2 Attacked Player 1!"
-            player1HP.text = "\(firstPlayer.HP)"
-            NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(ViewController.enableAttack), userInfo: nil, repeats: false)
-        } else {
+        disableAttack()
+        firstPlayer.attemptAttack(secondPlayer.attackPwr)
+        printLbl.text = "Player 2 Attacked Player 1!"
+        player1HP.text = "\(firstPlayer.HP)"
+        NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(ViewController.enableAttack), userInfo: nil, repeats: false)
+        if !firstPlayer.isAlive {
             player1.hidden = true
             player1Attack.hidden = true
             player1AttackLbl.hidden = true
@@ -79,7 +78,6 @@ class ViewController: UIViewController {
             secondPlayer.HP = 100
             player2Attack.hidden = false; player2AttackLbl.hidden = false; player2HP.hidden = false; player2.hidden = false; player2HP.text = "\(secondPlayer.HP)"
             player1Attack.hidden = false; player1AttackLbl.hidden = false; player1HP.hidden = false; player1.hidden = false; player1HP.text = "\(firstPlayer.HP)"
-            NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(ViewController.showResetBtn), userInfo: nil, repeats: false)
         }
     }
     
