@@ -33,11 +33,11 @@ class ViewController: UIViewController {
 
     @IBAction func onPlayer1Attack(sender: AnyObject) {
         if secondPlayer.isAlive {
-            player2Attack.enabled = false
+            disableAttack()
             secondPlayer.attemptAttack(firstPlayer.attackPwr)
             printLbl.text = "Player 1 Attacked Player 2!"
             player2HP.text = "\(secondPlayer.HP)"
-            NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(ViewController.enableSecondAttack), userInfo: nil, repeats: false)
+            NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(ViewController.enableAttack), userInfo: nil, repeats: false)
         } else {
             player2.hidden = true
             player2Attack.hidden = true
@@ -50,11 +50,11 @@ class ViewController: UIViewController {
     
     @IBAction func onPlayer2Attack(sender: AnyObject) {
         if firstPlayer.isAlive {
-            player1Attack.enabled = false
+            disableAttack()
             firstPlayer.attemptAttack(secondPlayer.attackPwr)
             printLbl.text = "Player 2 Attacked Player 1!"
             player1HP.text = "\(firstPlayer.HP)"
-            NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(ViewController.enableFirstAttack), userInfo: nil, repeats: false)
+            NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(ViewController.enableAttack), userInfo: nil, repeats: false)
         } else {
             player1.hidden = true
             player1Attack.hidden = true
@@ -83,12 +83,13 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    func enableFirstAttack() {
-        player1Attack.enabled = true
+    func disableAttack() {
+        player1Attack.enabled = false
+        player2Attack.enabled = false
     }
     
-    func enableSecondAttack() {
+    func enableAttack() {
+        player1Attack.enabled = true
         player2Attack.enabled = true
     }
     
