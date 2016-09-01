@@ -33,12 +33,11 @@ class ViewController: UIViewController {
 
     @IBAction func onPlayer1Attack(sender: AnyObject) {
         if secondPlayer.isAlive {
-            player2Attack.hidden = true
-            player2AttackLbl.hidden = true
+            player2Attack.enabled = false
             secondPlayer.attemptAttack(firstPlayer.attackPwr)
             printLbl.text = "Player 1 Attacked Player 2!"
             player2HP.text = "\(secondPlayer.HP)"
-            NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(ViewController.unhideSecondAttack), userInfo: nil, repeats: false)
+            NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(ViewController.enableSecondAttack), userInfo: nil, repeats: false)
         } else {
             player2.hidden = true
             player2Attack.hidden = true
@@ -51,13 +50,11 @@ class ViewController: UIViewController {
     
     @IBAction func onPlayer2Attack(sender: AnyObject) {
         if firstPlayer.isAlive {
-            player1.hidden = true
-            player1Attack.hidden = true
-            player1AttackLbl.hidden = true
+            player1Attack.enabled = false
             firstPlayer.attemptAttack(secondPlayer.attackPwr)
             printLbl.text = "Player 2 Attacked Player 1!"
             player1HP.text = "\(firstPlayer.HP)"
-            NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(ViewController.unhideFirstAttack), userInfo: nil, repeats: false)
+            NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(ViewController.enableFirstAttack), userInfo: nil, repeats: false)
         } else {
             player1.hidden = true
             player1Attack.hidden = true
@@ -87,14 +84,12 @@ class ViewController: UIViewController {
     }
     
     
-    func unhideFirstAttack() {
-        player1Attack.hidden = false
-        player1AttackLbl.hidden = false
+    func enableFirstAttack() {
+        player1Attack.enabled = true
     }
     
-    func unhideSecondAttack() {
-        player2Attack.hidden = false
-        player2AttackLbl.hidden = false
+    func enableSecondAttack() {
+        player2Attack.enabled = true
     }
     
     func showResetBtn() {
