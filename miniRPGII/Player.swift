@@ -24,6 +24,9 @@ class Player {
         get {
             return _HP
         }
+        set {
+            _HP = newValue
+        }
     }
     
     var attackPwr: Int {
@@ -40,6 +43,12 @@ class Player {
                 return true
             }
         }
+    }
+    
+    init(name: String, HP: Int, attackPwr: Int) {
+        _name = name
+        _HP = HP
+        _attackPwr = attackPwr
     }
     
     func attemptAttack(attack: Int) -> Bool {
