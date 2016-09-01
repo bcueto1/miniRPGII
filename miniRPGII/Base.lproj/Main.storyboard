@@ -200,7 +200,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="onPlayer2Attacked" destination="3X1-yY-r2h" id="il3-cq-dJA"/>
                         <outlet property="playResetBtn" destination="L11-n0-m0X" id="jiH-or-9kU"/>
                         <outlet property="playResetLbl" destination="Lbj-jE-Ghm" id="vYI-6f-I3q"/>
                         <outlet property="player1" destination="7LJ-xe-RCd" id="Zp0-wc-5zo"/>
